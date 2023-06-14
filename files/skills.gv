@@ -1,0 +1,39 @@
+digraph {
+
+    
+    // Avoid overlap of nodes
+    overlap=scale;
+    sep=0.2;
+
+    // Set layout to be circlular
+    layout=circo;
+    ordering="out"; // Anticlockwise order
+    
+    // Make all nodes same shape and size
+    node [shape=circle, fixedsize=true, width=2, height=2];
+    
+    // Name nodes
+    node1 [label="Integrated\nStroke\nCare\nModelling", penwidth=2, fontname="times bold"];
+    node2 [label="Causal\nInference\nand\nClinical Trial\nEmulation", 
+        color="red", fontcolor="red", penwidth=3];
+    node3 [label="Geographic\nModelling\nand\nOptimisation"];
+    node4 [label="Explainable\nMachine\nLearning"];    
+    node5 [label="Qualitative\nResearch"]
+    node6 [label="Clinical Care\nand\nClinical Audit"]
+    node7 [label="Clinical\nPathway\Simulation"]
+    node8 [label="Mathematical\nOutcome\nModelling"]
+    node9 [label="Health\nEconomics*", fontcolor="darkgrey"]
+   
+    // Describe connections
+    node4 -> node1 
+    node2 -> node1 [color="Red", penwidth=1]
+    node3 -> node1
+    node5 -> node1    
+    node7 -> node1
+    node8 -> node1 
+    node9 -> node1
+    node6 -> node1
+
+}
+
+ // To turn into image, in terminal types `dot -Tpng skills.gv -o skills.png`

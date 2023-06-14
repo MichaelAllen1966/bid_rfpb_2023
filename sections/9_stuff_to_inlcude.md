@@ -30,53 +30,14 @@ MJA: Does confusion matrix support higher confusion among mRS 0-2? E.g. is is ea
 
 Add in £5K for data request to finance if not there.
 
-## Asking ChatGPT "Tell me a bout methods for causal machine learning, in a way a 14 year old could understand"
+Use a Pearlian model for causation.
 
-Causal machine learning is a way of understanding why things happen, not just predicting what will happen based on past data. Here are some methods for causal machine learning that a 14-year-old could understand:
+## Cusal inference with DoWhy library:
 
-    Causal inference: This is a way of understanding the relationship between cause and effect. It involves asking questions like "What would have happened if X had not occurred?" and "What would happen if we changed Y?"
-    
-    Bayesian networks: This is a framework for causal inference that involves creating a graph showing how events cause each other. It can be used to predict the probability of an event occurring based on other events
-    
-    Do-calculus: This is a set of rules for manipulating causal models. It can be used to answer questions like "What would happen if we intervened to change X?"
-    
-    Counterfactual reasoning: This is a way of thinking about what would have happened if things had been different. It involves imagining different scenarios and comparing them to the actual outcome3
-   
-    Reinforcement learning: This is a method for learning incrementally using interactions with an environment. It can be used to learn causal relationships between actions and outcomes4
-  
-    Randomized controlled trials: This is a way of testing the effectiveness of a treatment or intervention by randomly assigning participants to different groups. It can be used to establish causal relationships between the treatment and the outcome5
-   
-Overall, causal machine learning is a way of understanding why things happen and how we can change them. It involves asking questions, creating models, and testing hypotheses to uncover causal relationships between variables.
+https://github.com/py-why/dowhy
 
-"Tell me more about Bayesian networks"
-
-Bayesian networks are probabilistic graphical models that represent the dependency structure of a set of variables and their joint distribution efficiently in a factorized way. Here are some more details about Bayesian networks:
-
-    Bayesian networks combine graph theoretic approaches with approaches of probability theory
-    
-    Each node in a Bayesian network corresponds to a random variable, and the edges between nodes represent the relationship between them
-    
-    Bayesian networks consist of a directed acyclic graph (DAG), which is a causal graph where nodes represent random variables and edges represent the relationship between them, and a conditional probability distribution (CPD) associated with each of the random variables
-    
-    The links between variables in Bayesian networks encode dependency but not necessarily causality. However, in some cases, Bayesian networks can be used to represent causal relationships between variables
-    
-    Bayesian networks can be used to answer questions about the relationships between variables, such as whether two variables are independent or whether one variable causes another
-    
-    Bayesian networks can be used to visualize the probabilistic model for a domain, review all of the relationships between the random variables, and reason about causal probabilities for scenarios given available evidence
-    
-    Bayesian networks are a type of probabilistic graphical model that explicitly capture the known conditional dependence with directed edges in a graph
-    
-    Bayesian networks are useful for dealing with uncertainty and complexity and are playing an increasingly important role in the design and analysis of machine learning algorithms
-
-Overall, Bayesian networks are a powerful tool for representing and reasoning about the relationships between variables in a probabilistic way. They can be used to answer questions, visualize relationships, and reason about causal probabilities.
-
-https://medium.com/towards-data-science/introduction-to-bayesian-networks-81031eeed94e
-
-https://medium.com/towards-data-science/conditional-independence-the-backbone-of-bayesian-networks-85710f1b35b
-
-https://medium.com/towards-data-science/causality-and-bayesian-networks-fcd959d4c80a
-
-https://medium.com/towards-data-science/bbn-bayesian-belief-networks-how-to-build-them-effectively-in-python-6b7f93435bba
-
-https://medium.com/codex/how-to-create-ai-hybrid-models-models-in-python-using-causalnex-a-guide-for-bayesian-networks-6d9387f06556
+Documentation: https://www.pywhy.org/dowhy/v0.9.1/
+Tutorial: https://causalinference.gitlab.io/kdd-tutorial/
+Video: https://www.microsoft.com/en-us/research/video/foundations-of-causal-inference-and-its-impacts-on-machine-learning/
+Repo: https://github.com/amit-sharma/causal-inference-tutorial/
 

@@ -18,7 +18,7 @@ digraph {
         color="red", fontcolor="red", penwidth=3];
     node3 [label="Geographic\nModelling\nand\nOptimisation"];
     node4 [label="Explainable\nMachine\nLearning"];    
-    node5 [label="Qualitative\nResearch"]
+    node5 [label="Co-Production"]
     node6 [label="Clinical Care\nand\nClinical Audit"]
     node7 [label="Clinical\nPathway\Simulation"]
     node8 [label="Mathematical\nOutcome\nModelling"]

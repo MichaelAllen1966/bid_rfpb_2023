@@ -1,0 +1,183 @@
+\section{27th June 2023 with Joao Delgado}
+
+JD - Including a strong research question would be useful.
+
+MA - Need to start to frame something more specifically. Got all data (SSNAP data including outcomes). Some patients get IVT, and some do not - want to compare their outcomes at discharge.
+
+MA - From the data see that patients that have more disabitily prior to stroke have a lower probability to have IVT. Is there a way to say that this is causal?
+
+JD - What's the research question for the SAMueL project?
+
+MA - SAMueL question: What underlies the variation in IVT rate between hospitals. What can be done to reduce this variation? What's potential benefit of IVT if it is used in a way that higher thrombolysing hospitals are using it?
+
+JD - What's your gold standard of practice (a Dr making optimal decision for the patient). Then have hospitals that are making less optimal decisions. Compare these outcomes, and you will know if your findings lead to patient benefit.
+
+MA - We've done this work, want to know if this is meaningful to patients.
+
+JD - In terms of causality, I use binary variables, and time to event.
+
+JD - Cox models were created for engineering. Have machine, and a time to failure. If you redesign machine (version2) then measure their time to failure. Variable is fail / not fail. Not counting number of machines that fail, but time to failure. Sum up all times the machine worked issue free, accounts for time as well as if they failed or not.
+
+In terms of patients, estimate time live without disability without IVT. More time without disability is better.
+
+MA - If you have a stroke, you can be disabled by it within hours. With IVT can either reverse or prevent disability caused by stroke (by restoring blood to brain).
+
+JD - Look at options for a model for ordinal scale? (look at ordinal regression?). Randomly assign patients to a unit that performs perfectly (to the gold standard) vs those that go to a unit that's not performing at the gold standard. Causality is controlling the variables of the patients (to make sure that anything that could control the outcome is the same across both patient groups).
+
+MA - Higher IVT rate hospitals (bigger) tend to be in London with simpler patients as younger population. Where propensity score matching could be useful.
+
+JD - Does gender have a difference to recover from stroke?
+
+MA - We have fit a good model at predicting outcome, using 5 features: Age, stroke severity, prior disability, time to IVT, stroke team.
+There may be other things going on with the stroke care in the hospital that help drive outcomes. Or the teams are classifying outcomes differently (mRS is quite crude, hospitals could have a bias).
+
+MA - Clinical trial created a binary outcome (for IVT: good 0-1 vs bad 2+, for MT: good 0-2 vs bad 3+). Trials  were limited in scope. Can we show apparent causal link between prior stroke mRS 2+ and outcomes - have heard if people with prior stroke mRS 2+ were not in trial, then treatment hasn't covered ethicacy for those patients.
+
+JD - Could run a model with all people. And run with mRS 2+. See if outcome are the same, or different.
+
+MA - Reducing scope of potential gain as can only get back to a higher level of prior disability.
+
+JD - Use scale differently. Could have people having stroke while being a different prior score. Can adjust their score based on their prior disability? An estimate to a relative? Transform score to be binary, able to return to basline level (or basleine + 1). As have difference in scores, rather than if look at higher levels of mRS, see proportion going back to baseline. Still need to adjust for mRS at beginning, as starting from mRS5 are either at 5 or die. So the survival is terrible, either die, else go back to prior level. Still not causality.
+
+JD - Causal wise, specify models in bid. If focus on traditional techniques (instrumental variables, propensity score). Try and do pilot data, do confounders for age etc, show difference in hazard ratio. Full project will properly assess causality.
+
+JD - Contact: Jack Bowden. Develops methods for establishing causality.
+
+MA - Stay away from novel method development. Apply state of art but already developed techniques.
+
+JD - Fiona works on trials, important for causality, but not work with observational data.
+
+JD - Include caveats in the bid. Can never establish 100% causality unless have instrumental variable (tricky to find). But can make a best guess. Talk about association.
+
+MA - Hosptial SHAP value is how much odds to receive IVT from attending that hospital, rather than patient characterstics.
+
+JD - How to create an instrumental variable? Create a level per stroke unit, estimate likelihood someone have IVT, what trying do with score, ignore patient characteristics and focus on doctors preference. Patient going to a hospital is random (as based on where they live). Compare patients attend hospital with low IVT odds, and going to hospital with high IVT odds. That's an instrumental variable.
+
+MA - There are some patients that all hospitals would agree to give IVT to. There's some patients that all hospitals would agree to not give IVT to. Then there are those patients in the middle, we've termed the "contentious patients" that some hospitals would give IVT to.
+
+JD - Have a predictive model to get this. Have to demonstrate the key patient characteristics are evenly distributed across those that get IVT and those not get IVT. Then consider range - if take 0.5 as the mid range score, then set a wide range going each side and count the number of confounders (effects both intervention). If not the same then reduce the range until come just above and below mid point.
+Loose a lot of power as taking out lots of power. If bulge is in the middle (mode around 0.5)...
+
+JD - In terms of outcomes does that mean 50% get it, and 50% don't.
+
+MA - Yes, we have a well calibrated model, so have same number of people above and below. Adjust cutoffs to give us on average 50% probability (have as many IVT, and not IVT).
+
+JD - Find a couple of confounders that are going to be problematic. Regression on them to check distribution.
+Rank the patients and have the cutoff point. Take out top and bottom decile. Then increase by 5% each end. Til get same distribution at each end. What's the prevalence of confounders in the above and below. Distribution in the confounders isn't significantly different. Can't compare directly - only look at intervention. Can check for the cause of the intervention as other than receiving IVT or not we have got comparable groups in terms of the confounders.
+
+MA - Our confounders also effect whether get treatment, as well as the outcome.
+
+JD - DAGity (tool). Models suggests potential confounders, and what you should adjust for. Has rules, shows the things you need to adjust for to test causality.
+
+JD - For NIHR bids, have number potential tools to check for causality. They are focusing on method. Show there's potential, one is instrumental variable (not all, here's a few, the project is to identify all confounders) the stroke unit score for giving IVT [SHAP]. Show patients aren't different, selection on ?occerus? because of patient difference and not the dr.
+Then limit score to the cutoff.
+See how work against different tools such as propensity score, formal adjustment, inverse probability weighting.
+Specify that these tools can be used in the hospital context.
+
+\section{27th June 2023 with Mark Kelson}
+
+MA gave intro: 
+We work with SSNAP, and NHS England, Wales and Northern Ireland on organisation of stroke services. We have an interest in use of IVT. There is a lot of variation in hospitals use of IVT (5-50\% of patients that arrive in time for IVT receive IVT).
+
+We have built machine learning models that learn decision making at each hospital. We can predict, for any patient, are you likely to receive IVT at each hospital. Pulling out effect of hospital on the likelihood to get IVT.
+
+There is a worry (from the hospitals that have a low IVT rate) that the hospitals that are giving lots of IVT could be doing harm as giving IVT indiscriminantly.
+
+Want to look at whether there is a cap on the benefit of giving IVT ot more patients. Are any hospital giving IVT to too many patients?
+
+Our models were predicting whether patient got IVT, we are now looking at predicting the discharge outcome of a patient (this is a 7 point disability score called mRS). We have the mRS prior to their stroke, and when they leave the hospital inpatient stay.
+
+We now want to know if any of the relationships are causal.
+
+Clinical trials were not fully double blind. Also some people say that trials were not successful, as the benefit from IVT is only dependent on the outcome of a meta-analysis.
+
+The clinical trials only looked at a rather selective group of patients. We are wondering whether we can do analysis on the subgroups of patients not in the trials, to see if we can demonstrate a benefit of IVT in those, e.g. those with higher mRS prior to stroke - represented in the real world but not in the trials.
+
+We have been using XGBoost for our predictive models, then SHAP for explainable layer on top. We will likely keep this approach for our models. When say if outcomes are better or worse can we be confident it's due to the use of IVT. What are the various causal models that we can include?
+
+MK - Are bad outcomes from IVT different from the bad outcomes from indiscriminant IVT use?
+
+MA - The outcome is a measure of independence of living - the same for both (stroke and treatment outcome). But the mechanism is different - from stroke it's the clot, from the treatment it's from causing a different (and worse) stroke (haemorrgage) than what the treatment is trying to improve.
+
+MK - Is the type of stroke that IVT causes different from the one it's treating?
+
+MA - In dataset there's a field that records whether you caused an intercranial haemorrage from IVT. These patient should have a worse outcome at discharge vs severity than expect.
+
+MK - Nice position to be in with this data, and can untangle.
+
+MA - Can convert mRS to a utility. and potentially to a QALY.
+
+MK - What could work here is use of synthetic control groups. From causal inference perspective, approaching some of the nicest properties. And overlap with clinical trial emmulation - might be tempted to say synthetic control group. If have information about a lot of hospitals.
+
+MA - Dataset contains 350000 patients. 12\% receive IVT. 100+ hospitals.
+
+MA - How would you form a synthetic control group?
+
+MK - Element of hospital level analysis, hospitals that have a greater propensity to give IVT. compare treated vs untreated hospital (above certain propensity) and compare with those with lower hospital propensity threshold. Similar for composition of patients and size and other hospital level information.
+
+MA - Can isolate effect of hospital with thait SHAP value. This is independant of patient, it is how the hospital effects the odds of receiving IVT. We can identify hospitals with high vs low IVT if given same patients. If have these hospitals, they are likely to have different patient groups. How select patients? Those within certain boundaries?
+
+MK - Composition of hospital would form component of ???
+For synthetic control group on hospital (know younger population than this treatment hospital, but weight it somehow - some optimal weights created by the synthetic algorithm). Then a comparator track over time.
+
+Lots of ways, v similar to propensity score analysis.
+
+MA - Use propensity score to create matched groups. Other ways to use propensity score?
+
+MK - The approach of "Matching" has fallen out of favour as it adds another layer of randomness. Propensity score analysis included as a co-variate is the preferred approach. Feeds into inverse probability (regression will sort it out).
+
+MK - What's clinical trial emulation?
+
+MA - It's also called target trial emulation. Trying to replicate clinical trial from observational data. Left with same limitations at clinical trials have. So not have patient with high prior disability.
+
+MK - Any clinical level variation? Cultural difference? Clinicians moved hospitals. Junior Drs sent on placement (quasi-random) could find a nice natural experiment in your data.
+
+MA - Not have individual Dr level. Assume there's culture. With our data, predict hospital IVT rate very accurately. It seems the dominant effect is a cultural one.
+
+MK - Having a case study is a valid thing to focus on, such as focusing on two hosptials that you know have different cultures. Can use these two hospitals and squeeze causal inference out of Y vs B.
+
+MK - Multi-level model. Allow for clustering of patients, clinicians within hospitals. Project where modelling leave one out. See if relationships held in the left out modelling (their application was river basins). We'd look at does it generalise to hospitals left out of our dataset?
+
+MA - Use k-fold validation (spread over hospitals)
+
+MK - Looked at data on depth of ice in Greenland. Flights and take sonar readings. so frequent enough such that kfold didn't remove any information.
+
+MA - Repeat and run and train 1 hospital left out each time. Model agnostic model - otherwise hospital label is outside training set when the left out one was given to the model.
+
+MA - Don't use hierachical clustering models. Fit a random forest model with all data (feature selection first).
+
+MA - Complexity don't know yet, outcomes are dependant on hospital and also independent on their use of IVT. Hospitals may just be better at outcomes for stroke based on their other stroke care. Not too long ago patients died as not given water to drink. Pull information about other hospital care.
+
+MK - Evidence for model. Have medical theory, this should be important, if not seeing relationship between quality indicators and outcomes as the quality indicators should be most important. So then not expect to see difference due to IVT.
+
+MK - Have some benchmark, we know that quality indicators for after stroke are due to decrease in post stroke complications, compare to any effects of IVT. Save 20\% of aftercare. Gives an anchor point.
+
+MA - Use outcome models that take the after stroke care into account.
+
+MK - Disentagling lots of those features is tricky without randomisation.
+
+MA - Populations do vary between hospitals. That partly influences IVT can give. Other aspect of the care that they receive could be having a significant effect.
+
+MK - Broad philosophy (epidemiologist vs economists). Epidemiologists keep all in their head at the time. Economist ignore context but look at mechanism to access this.
+Want to look at triangularisation approach.
+Need to also control for important hospital level affects that effects outcomes.
+
+MA - Show is IVT in practice good? There are people who doubt that it is. Be good to build up that trust.
+
+MK - Simply expressed research question - where there's lots of IVT are there lots of bad outcomes? If passed this question, then what's something that can cause this without a causal effect. There's an association, but it's not due to reason A, B, C.
+
+MA - About having confidence in result, not a perfect causal result.
+
+MK - Everything putting down for this bid makes sense. Have person + computer + data, so seems good value for money. No reason not to make good progress on this question.
+
+MA - SSNAP is well established, and CoP to encourage IVT and we're feeding into this.
+
+MK - Would they be willing to randomise the order they are doing it? How select the four hospitals? Are they 4 just above, and 4 just below the selection criteria? A natural experiment idea. All data collected via SSNAP, so hope to see the IVT data. Recover something useful from this RCT even if not organised perfectly.
+
+MK - Synthetic control group can be applied to these two hospital settings.
+
+MA - Are you happy to be included? (currently down at 5\%)
+
+MK - Yes please.
+
+MK - C Corn funding opportunities. Data scientist, workpackage from this. At lower level, two summer project for MSc. Data scientist to data wrangle.

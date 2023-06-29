@@ -22,7 +22,7 @@ digraph {
     node6 [label="Clinical Care\nand\nClinical Audit"]
     node7 [label="Clinical\nPathway\Simulation"]
     node8 [label="Mathematical\nOutcome\nModelling"]
-    node9 [label="Health\nEconomics*", fontcolor="darkgrey"]
+    node9 [label="Health\nEconomics", fontcolor="darkgrey"]
    
     // Describe connections
     node4 -> node1 

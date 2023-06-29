@@ -12,6 +12,10 @@ https://towardsdatascience.com/a-complete-guide-to-causal-inference-8d5aaca68a47
 
 * Say what we've done, what is missing, and how we plan to full the gap.
 
+## Packages
+
+https://pypi.org/project/psmpy/
+
 
 ## Letters of support:
 

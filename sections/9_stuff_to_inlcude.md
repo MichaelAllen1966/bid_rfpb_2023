@@ -39,9 +39,45 @@ Use a Pearlian model for causation.
 ## Cusal inference with DoWhy library:
 
 https://github.com/py-why/dowhy
+https://youtu.be/Ts0hnNBRIWg?si=u4seW0loTShtKQFn
 
 Documentation: https://www.pywhy.org/dowhy/v0.9.1/
 Tutorial: https://causalinference.gitlab.io/kdd-tutorial/
 Video: https://www.microsoft.com/en-us/research/video/foundations-of-causal-inference-and-its-impacts-on-machine-learning/
 Repo: https://github.com/amit-sharma/causal-inference-tutorial/
+
+## Stuff 
+
+* People interpret results as causal even if the C-word is not used
+
+
+
+
+More methods:
+
+* Workshops to draw DAGs
+ 
+Covariate adjustment (response surface modelling) - conditional average treatment effect (CATE)
+Propensity score reweighting (inverse treatment probability weighting)
+Propensity score stratification
+Doubly robust estimates
+Matching
+
+
+Drawing a DAG (from https://youtu.be/Ts0hnNBRIWg?si=u4seW0loTShtKQFn):
+* Develop and state a clear research question?:
+  * What is yoiur focal relationship?
+    * What is your exposure?
+    * What is your outcome?
+    * What is your estimand?  
+* Condsider and state your context
+* Draw your DAG(s) as early as possible
+* Get help - don't draw it alone
+* Include all relevant variables (what total infoirmation would you have in an ideal world - show latent varaible that could be important but you don't have)
+* Draw your DAG(s) in tempral order
+* Draw forwards arcs, unless confident otherwise (assume links could be causal, unless sure otherwise) - then prune back. e.g could differences in stroke severity cause a change in arrival-to-scan time; if uncertain draw an arc
+* Check your DAG9s) against your data
+* Use your DAG(s) to inform and interpret your model - clearly state the causal model in your analysis and discussion
+* Share and publish your DAG
+
 

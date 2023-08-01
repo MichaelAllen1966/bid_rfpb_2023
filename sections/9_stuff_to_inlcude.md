@@ -1,5 +1,12 @@
 https://towardsdatascience.com/a-complete-guide-to-causal-inference-8d5aaca68a47
 
+https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%C2%A0insights.html
+
+"Unless features in a model are the result of experimental variation, applying SHAP to predictive models without considering confounding is generally not an appropriate tool to measure causal impacts used to inform policy. SHAP and other interpretability tools can be useful for causal inference, and SHAP is integrated into many causal inference packages, but those use cases are explicitly causal in nature. To that end, using the same data we would collect for prediction problems and using causal inference methods like double ML that are particularly designed to return causal effects is often a good approach for informing policy. "
+
+
+Double machine learning: https://towardsdatascience.com/double-machine-learning-for-causal-inference-78e0c6111f9d
+
 # Notes on stuff to possibly include:
 
 * ML models of variation in suitability for thrombolysis and thrombectomy
@@ -61,7 +68,10 @@ Covariate adjustment (response surface modelling) - conditional average treatmen
 Propensity score reweighting (inverse treatment probability weighting)
 Propensity score stratification
 Doubly robust estimates
+Double ML
 Matching
+
+
 
 
 Drawing a DAG (from https://youtu.be/Ts0hnNBRIWg?si=u4seW0loTShtKQFn):
@@ -79,5 +89,28 @@ Drawing a DAG (from https://youtu.be/Ts0hnNBRIWg?si=u4seW0loTShtKQFn):
 * Check your DAG9s) against your data
 * Use your DAG(s) to inform and interpret your model - clearly state the causal model in your analysis and discussion
 * Share and publish your DAG
+
+## Notes
+
+Confounder = common cause, or background variable, that is a variable that influences both the independent variable and dependent variable, causing a spurious association. The influence my be direct or indirect. Confounders are removed by conditioning on the confounder, or including the confounder in a model (to isolate its effect).
+
+A collider is a variable in statistics and causal graphs that is causally influenced by two or more variables. If we condition on the collider (e.g. pick a fixed value/range), then we can see a spurious association between the two causal variables.
+
+"We should condition on any factor that is causilty relevant to the effect" Nancy Cartwright 1983. But - causal diagrams give a better/fuller answer.
+
+
+Showing causality with the do operator
+
+X causes Y if P(Y/*do*(X)) > P(Y)
+
+This is different to observational conditioning: P(Y|X) > P(Y)
+
+## Quotes
+
+"Probabilities encode our beliefs about a static world; causality tells us whether and how probabilties change when the world changes, be it by intervention or by an act of imagination" The Book Of Why
+
+"Causal inference is a core task of science. However, authors and editors often refrain from explicitly acknowledging the causal goal of research projects; they refer to causal effect estimates as associational estimates. This commentary argues that using the term “causal” is necessary to improve the quality of observational research. Specifically, being explicit about the causal objective of a study reduces ambiguity in the scientific question, errors in the data analysis, and excesses in the interpretation of the results." Hernan, from The C-Word: Scientific Euphemisms Do Not Improve Causal Inference From Observational Data
+
+
 
 

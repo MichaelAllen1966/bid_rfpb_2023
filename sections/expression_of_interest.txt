@@ -1,0 +1,30 @@
+AIM
+
+Our overall aim is to improve the benefit achieved by use of clot-busting medication ('thrombolysis') in stroke, by understanding how decisions on thrombolysis use affect patient outcomes, particularly disability at hospital discharge. We currently use clinical pathway simulation and 'explainable machine learning' to model and understand processes and decision-making at each hospital. In this project, we will apply ‘causal inference’ methodologies to investigate 1) how decision-making affects patient outcomes, and 2) identify the key patient characteristics that optimise benefits from receiving thrombolysis. This will produce guidance on how to improve patient outcomes at a hospital-level.
+
+BACKGROUND
+
+Stroke is one of the leading causes of death and disability. For every 10 strokes, 8 are caused by a clot in the brain. For these patients there is the possibility to reduce, or remove, the clot by use of thrombolysis. The use of thrombolysis varies very significantly between hospitals, and the overall use is only about half of the NHS target. Using our current methods, we have identified that the majority of this variation appears to come from differences in decision-making and in-hospital processes, rather than from differences in local patient populations. We are now modelling outcomes and are seeing potentially important patterns. For example, early use of clot-busting drugs appears to reduce the risk of death in mild strokes, while late use can increase the risk. 
+
+Stroke clinical trials often restrict the characteristics of patients included, therefore current evidence does not apply to many patients suffering from stroke. To optimise thrombolysis use we must understand its benefits and risks to ‘real-world’ patients. Here we will incorporate tried and experimental “causal inference” methods to better understand the benefits of thrombolysis to patients, and when to administer it. These observations could potentially help to identify which patient groups benefit most from thrombolysis.
+
+DESIGN AND METHODS USED
+
+We wish to expand our methodology to include a range of 'causal inference' methods. These include:
+
+* Describing proposed cause-and-effect relationships
+* Covariate adjustment based on identified potential confounders
+* Matching and stratification - creating sets of data that are similar apart from the variable of interest
+* Instrumental variable analysis
+* Inverse propensity weighting
+* Double machine learning
+
+These methods will be incorporated into our analysis that we provide to hospitals.
+
+PATIENT AND PUBLIC INVOLVEMENT
+
+Our team has a dedicated PPI group who provide constant input into our work and have provided input to this bid. The PPI group have been a key voice in guiding our work to look at what maximises patient outcomes, and not arbitrary targets on thrombolysis use.
+
+PATIENT BENEFIT AND DISSEMINATION
+
+We have very strong links to patient benefit. We are working with NHS-England to target specific hospitals for improvement. Key outputs from our work will be incorporated into the national stroke audit from spring 2024. We publish our work in leading stroke journals, and present it at stroke conferences. All of our detailed work and code is published openly in online books.

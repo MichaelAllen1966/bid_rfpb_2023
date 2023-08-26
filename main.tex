@@ -4,6 +4,7 @@
 \usepackage{microtype} % 'Improved' typesetting
 \usepackage{parskip} % Adds white space between paragraphs
 \usepackage[super]{natbib} % Citations using superscript
+%\usepackage{natbib} % Citations using superscript
 \usepackage[a4paper, left=1.5cm, right=1.5cm, top=1.5cm, bottom=2.0cm]{geometry}
 \usepackage{longtable,booktabs}  % For tables
 \usepackage{caption} % For figure and table captions
@@ -34,18 +35,59 @@
 
 \hbadness=1000000 % Turn off \hbox badness warnings
 
-\begin{document}
+% Word counts
+\usepackage{verbatim}
 
+\newcommand{\detailtexcount}[1]{%
+  \immediate\write18{texcount -sub=section -merge -sum -q #1.tex output.bbl > #1.wcdetail }%
+  \verbatiminput{#1.wcdetail}%
+}
+
+\newcommand{\quickwordcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -q #1.tex output.bbl > #1-words.sum }%
+  \input{#1-words.sum} words%
+}
+
+\newcommand{\quickcharcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -char -q #1.tex output.bbl > #1-chars.sum }%
+  \input{#1-chars.sum} characters (not including spaces)%
+}
+
+\begin{document}
+% Info on wordcounts:
+% https://www.overleaf.com/learn/how-to/Is_there_a_way_to_run_a_word_count_that_doesn%27t_include_LaTeX_commands%3F
+
+% To include refs in word count:
+%TC:incbib
+
+% Ignore title and abstract in word count
+%TC:ignore
 \include{sections/1_title}
 \maketitle
 \vspace{-20mm}
+%TC:endignore
 
-\input{sections/2_summary}
+
 %\input{sections/2a_plain_english_summary}
+%\input{sections/2b_plain_english_summary}
+%\input{sections/2b_plain_english_summary_450}
+\input{sections/4_research_plan}
+
 %\input{sections/3_bid_info}
 %\input{sections/4_background}
 %\input{sections/5_method_development}
 %\markdownInput{sections/9_stuff_to_inlcude.md}
 
+%TC:ignore
+\newpage
+\bibliographystyle{naturemag}
+\footnotesize
+\bibliography{references}
+%TC:endignore
+
+
+%\input{sections/word_count}
+
 \end{document}
+
 

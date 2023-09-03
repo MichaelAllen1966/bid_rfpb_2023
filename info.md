@@ -1,7 +1,6 @@
-\section{Bid Info}
+# Application
 
-
-\begin{markdown}
+https://ccfrms.nihr.ac.uk/
 
 * Call opens – 17 May 2023    \item Expression of Interest - (500 words) 16 August 2023 at 1pm
 * Close call – 13 September at 1pm
@@ -20,8 +19,7 @@
 *  Research to explore the potential for improving patient health and wellbeing through needs assessments, methods development and exploratory studies.
 * Evidence synthesis and systematic reviews
 
-
-Links:
+# Links
 
 Main page: https://www.nihr.ac.uk/funding/rfpb-under-represented-disciplines-and-specialisms-highlight-notice-methodologists/33231
 
@@ -40,8 +38,3 @@ Stage 2 Guidance: https://www.nihr.ac.uk/documents/research-for-patient-benefit-
 Stage 1 template: https://www.nihr.ac.uk/documents/funding/cross-programme/NIHR-Template-Application-Form-stage-1.docx
 
 Stage 2 template: https://www.nihr.ac.uk/documents/funding/cross-programme/NIHR-Template-Application-Form-stage-2.docx
-
-
-\end{markdown}
-
-Project ID: 2692263

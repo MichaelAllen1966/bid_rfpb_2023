@@ -4,9 +4,9 @@ Our aim is to improve the benefit that can be achieved from the use of the medic
 
 BACKGROUND
 
-Stroke is one of the leading causes of death and disability. Most strokes are caused by a clot in the brain. For these patients there is the possibility to break down the clot by use of thrombolysis. Thrombolysis use and speed varies a lot between hospitals, and the overall use is only about half of the NHS target.
+Stroke is one of the leading causes of death and disability. Most strokes are caused by a clot in the brain. For these patients there is the possibility to break down the clot by use of thrombolysis, avoiding or reducing the disability that would have been caused. Thrombolysis use and speed varies a lot between hospitals, and the overall use is only about half of the NHS target.
 
-Our modelling has already identified some potential effects of the variation in treatment. One observation is that for people suffering a mild stroke, early use of thrombolysis appears to reduce the risk of death, but late use can increase the risk of death. This observation may be used to support a change in clinical practice. However, our current models are not the right type for us to state any cause-and-effect conclusions. To be able to confirm that early use of thrombolysis is actually causing the observed reduction in death we would use causal inference analysis. By extending our current work to use these new methods, we will strengthen our findings by ruling out any current observation being due to a coincidence.
+Our modelling has already identified potential effects of the variation in treatment. One observation is that for people suffering a mild stroke, early use of thrombolysis appears to reduce the risk of death, but late use can increase the risk of death. This observation may be used to support a change in clinical practice. However, our current models are not the right type for us to state any cause-and-effect conclusions. To be able to confirm that early use of thrombolysis is actually causing the observed reduction in death we would use 'causal inference' analysis. By extending our current work to use these new methods, we will strengthen our findings by ruling out any current observation being due to a coincidence.
 
 DESIGN AND METHODS
 

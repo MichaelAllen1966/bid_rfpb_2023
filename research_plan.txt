@@ -1,14 +1,12 @@
 1 WHAT IS THE PROBLEM?
 
-'Much of the variation in healthcare is accounted for by the willingness and ability of doctors to offer treatment rather than differences in illness or patient preference' John Wennberg, the pioneer of research into clinical variation, and founder of the Dartmouth Atlas of Health Care.
-
-Stroke remains one of the leading causes of death and disability, globally and in the UK. Thrombolysis with recombinant tissue plasminogen activator, can significantly reduce disability after ischaemic stroke, so long as it is given in the first few hours after stroke onset [1]. Despite thrombolysis being of proven benefit in ischaemic stroke, use of thrombolysis varies significantly both between and within European countries [2]. In England and Wales the national stroke audit reported that in 2021/22, 20 years on from the original European Medicines Agency licencing of alteplase for acute ischaemic stroke, thrombolysis rates for emergency stroke admissions varied from just 1% to 28% between hospitals, with a median rate of 10.4% and an inter-quartile range of 8%-13%, against a 2019 NHS England long term plan that 20% of patients of emergency stroke admissions should be receiving thrombolysis.
+Stroke remains one of the leading causes of death and disability, globally and in the UK. Thrombolysis with recombinant tissue plasminogen activator, can significantly reduce disability after ischaemic stroke, so long as it is given in the first few hours after stroke onset [1]. Despite thrombolysis being of proven benefit in ischaemic stroke, use of thrombolysis varies significantly both between and within European countries [2]. In England and Wales the national stroke audit reported that in 2021/22, thrombolysis rates for emergency stroke admissions varied from just 1% to 28% between hospitals. Overall, about 10% of patients receiving thrombolysis, against a NHS England long term plan that 20% of patients of emergency stroke admissions should be receiving thrombolysis.
 
 Our research team uses various modelling techniques, including explainable machine learning to identify the variation that occurs across different hospitals during the first few hours of stroke care. We use these models to understand the the source and impact of that variation on patients [3;4]. We work together with the Sentinel Stroke National Audit Programme and NHS-England on reducing between hospital-variation in emergency stroke care.
 
 2 WHY IS THIS RESEARCH IMPORTANT?
 
-Variation in use of thrombolysis in emergency stroke care is hampering the ability to meet NHS targets on use of this disability-saving treatment, and is causing inequality of access to this treatment. Thrombolysis rates are, however, only half the story. As thrombolysis also carries a risk of serious injury, it is important to check that improving thrombolysis rates will improve outcomes. The planned work seeks to add causal inference methodologies to our methods - to strengthen the trust that changes suggested would indeed lead to improved outcomes.
+Variation in use of thrombolysis in emergency stroke care is hampering the ability to meet NHS targets on use of this disability-saving treatment, and is causing inequality of access to this treatment. Thrombolysis rates are, however, only half the story. As thrombolysis also carries a small risk of serious injury, it is important that thrombolysis use is increased in the right group of patients - those where thrombolysis is likely to improve the chance of a good outcome. We also look at patient outcomes (death and disability). But there is a risk we may be misled by observations in the data and in our models; what we think is a real relationship between two variables may be caused by another factor. The planned work seeks to add causal inference methodologies to our methods - these strengthen our understanding of cause-and-effect relationships and build trust that changes suggested would indeed lead to improved patient outcomes.
 
 3 REVIEW OF EXISTING EVIDENCE
 
@@ -30,13 +28,13 @@ Some patterns are appearing in the analysis which may help guide clinicians on u
 
 4 RESEARCH AIMS
 
-The key aim of the proposed research is to incorporate causal inference methodology into our clinical pathway simulation and explainable machine learning analysis of emergency stoke care. We consider this a key methodological development, alongside explainable machine learning, to test, and build trust in, how changes in use of thrombolysis will effect outcomes.
+The key aim of the proposed research is to incorporate causal inference methodology into our clinical pathway simulation and explainable machine learning analysis of emergency stoke care. We consider this a key methodological development, alongside explainable machine learning, to test, and build trust in, how changes in use of thrombolysis will effect patient outcomes.
 
 4.1 SPECIFIC RESEARCH QUESTIONS
 
 We are interested in incorporating causal inference analysis into a wide range of our work, but he have specific research questions to pin this development to. These research questions will help ensure advice given to stroke teams has the strongest foundations for improving outcomes.
 
-* In subgroups of patients where we see significant inter-hospital variation in use of thrombolysis, is there good evidence that the hospital is causing the variation in thrombolysis use in these groups (rather than this effect coinciding with other factors)? Example patient subgroups are 1) Mild stroke (at presentation), 2) Presence of prior disability, and 3) Imprecisely known stroke onset time.
+* Is there good evidence that the hospital is causing the variation in thrombolysis use in subgroups of patients where we see significant between-hospital variation in use of thrombolysis (rather than this effect coinciding with other factors)? Example patient subgroups are 1) Mild stroke (at presentation), 2) Presence of prior disability, and 3) Imprecisely known stroke onset time.
 
 * In subgroups of patients where we see significant changes in outcome, is there good evidence that the main feature of interest in the patient subgroup is causing the variation in outcome in these groups (rather than this effect coinciding with other factors)? Example patient subgroups include early vs. late thrombolysis in mild stroke (where early thrombolysis appears to reduce the odds of death, but late thrombolysis increases the odds of death)?
 
@@ -48,9 +46,9 @@ We use anonymous patient-level data from the Sentinel Stroke National Audit Prog
 
 5.2 METHODS
 
-When using observational data, no single method can provide proof of causality. Instead we will use a series of methods, each of which will contribute to understand causality. These methods will be applied to choice of thrombolysis, and outcomes, especially where we have identified high between-hospital variation in the use of thrombolysis.
+When using observational data, no single method can provide proof of causality. Instead we will use a combination of methods, each of which will contribute to understand causality. These methods will be applied to 1) examining variation in apparent differences between hospitals in which patients receive thrombolysis, and 2) apparent differences in outcomes in patient subgroups. The methods we will investigate are:
 
-* Explainable machine learning with SHAP [12] - We will continue to use SHAP analyse to provide machine learning models at a global level and for individual predictions.
+* Explainable machine learning with SHAP [12] - We will continue to use SHAP analysis to provide machine learning models at a global level and for individual predictions.
 
 * DAG (directed acyclic graphs) [13] - Articulating proposed causal relationships through use of DAGs help to make assumed or hypothesised causal and non-causal relationships clear. They are easily understood by non-technical audiences, and so form an excellent basis for discussions and workshops to explore proposed causal relationships with clinical experts. We will use these, alongside results from other methods, in co-production workshops.
 
@@ -80,7 +78,7 @@ During this project we will hold stakeholder workshops to obtain feedback on the
 
 A pilot web portal is being made available from autumn 2023, providing analysis of thrombolyis use at each hospital, comparing decisions made to other hospitals, and providing modelling how changing process speeds or clinical decisions would likely effect thrombolysis use and outcomes (based on a mathematical model of outcome depending on time to thrombolysis).
 
-The modelling work currently being performed (https://fundingawards.nihr.ac.uk/award/NIHR134326) is planned to be incorporated into the national stroke audit from Spring 2024. This will provide teams with realistic target thrombolysis use for their own patient population, and identify which area of the stroke pathway to focus on (for example pathway speed, ascertainment of stroke onset time, thrombolysis decision making). Additionally, NHS-Elect (who are working with NHS-England, the SAMueL team, and the national stroke audit) have an NHS improvement target to “Improve access to thrombolysis such that by the end of 2027/28, 20% of stroke patients will receive thrombolysis treatment”. This collaborative will be working with 6 low-thrombolysing teams in the first instance, before extending work to all emergency stroke teams. As part of the quality improvement work, the SAMueL team will be providing modelling on use of thrombolysis, including on variation in decision-making between hospitals. We consider it important that this work should, if at all possible, include strengthened work on causality (the links between changes to pathway and decision making, through to thrombolysis use, and through to outcome) so that we have greater confidence that changes suggested (and potentially made) will lead to the expected improvement in thrombolysis use and, most importantly, in better outcomes and not ’just’ increased thrombolysis use.
+The modelling work currently being performed (https://fundingawards.nihr.ac.uk/award/NIHR134326) is planned to be incorporated into the national stroke audit from Spring 2024. This will provide teams with realistic target thrombolysis use for their own patient population, and identify which area of the stroke pathway to focus on (for example pathway speed, ascertainment of stroke onset time, thrombolysis decision making). Additionally, NHS-Elect (who are working with NHS-England, the SAMueL team, and the national stroke audit) have an NHS improvement target to “Improve access to thrombolysis such that by the end of 2027/28, 20% of stroke patients will receive thrombolysis treatment”. This collaborative will be working with 6 low-thrombolysing teams in the first instance, before extending work to all emergency stroke teams. As part of the quality improvement work, the SAMueL team will be providing modelling on use of thrombolysis, including on variation in decision-making between hospitals. We consider it important that this work should, if at all possible, include strengthened analysis of causality (the links between changes to pathway and decision making, through to thrombolysis use, and through to outcome) so that we have greater confidence that changes suggested (and potentially made) will lead to the expected improvement in thrombolysis use and, most importantly, in better outcomes and not ’just’ increased thrombolysis use.
 
 5.4 DISSEMINATION
 
@@ -104,11 +102,11 @@ The project teams bring together experience of stroke care, machine learning, ep
 
 5.6 PATIENT AND CARER INVOLVEMENT
 
-Our team has a dedicated PPI group who provide constant input into our work and have provided input to this bid. The PPI group have been a key voice in guiding our work to look at what maximises patient outcomes, and not arbitrary targets on thrombolysis use. The PPI team is chaired by Leon Farmer, a stroke supervisor, with guidance from Lauren Asare of the University of Exeter PenARC PPI team.
+Our team has a dedicated PPI group who provide constant input into our work and have provided input to this bid. The PPI group have been a key voice in guiding our work to look at what most benefits patients, and not just meeting arbitrary targets on thrombolysis use. The PPI team is chaired by Leon Farmer, a stroke supervisor, with guidance from Lauren Asare of the University of Exeter PenARC PPI team.
 
 5.7 PEOPLE DEVELOPMENT
 
-In addition to development of the methodology, this project will be used to develop the skills and capabilities of Kerry Pearn (Co-PI) who will lead the project with assistance from Michael Allen (Co-PI). The stroke modelling and data science team is a stable team, funded by research grants and NHS-contracted work, and the techniques and skills developed here will find long-term use and benefit.
+In addition to development of the methodology, this project will be used to especially develop both the technical and project management skills and capabilities of Kerry Pearn (Co-PI) who will co-lead the project with Michael Allen (Co-PI). The stroke modelling and data science team is a stable team, funded by research grants and NHS-contracted work, and the techniques and skills developed here will find long-term use and benefit.
 
 5.8 CONTRIBUTION BEYOND THIS PROJECT
 
